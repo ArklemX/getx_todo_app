@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
+import 'package:getx_todo_app/app/data/services/storage/repository.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  TaskRepository taskRepository;
+  HomeController({required this.taskRepository});
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +19,5 @@ class HomeController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
+  
 }
