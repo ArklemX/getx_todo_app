@@ -1,7 +1,10 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:getx_todo_app/app/core/utils/extensions.dart';
+import 'package:getx_todo_app/app/core/values/colors.dart';
+import 'package:getx_todo_app/app/data/models/task.dart';
 import 'package:getx_todo_app/app/modules/home/controllers/home_controller.dart';
 import 'package:getx_todo_app/app/widgets/icons.dart';
 
@@ -44,26 +47,63 @@ class AddCart extends StatelessWidget {
                       },
                     ),
                   ),
-                  Wrap(
-                    spacing: 2.0.wp,
-                    children: icons
-                        .map((e) => Obx(() {
-                              final index = icons.indexOf(e);
-                              return ChoiceChip(
-                                label: e,
-                                selected: homeCtrl.chipIindex.value == index,
-                                onSelected: (bool selected) {
-                                  homeCtrl.chipIindex.value =
-                                      selected ? index : 0;
-                                },
-                              );
-                            }))
-                        .toList(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5.0.wp),
+                    child: Wrap(
+                      spacing: 2.0.wp,
+                      children: icons
+                          .map(
+                            (e) => Obx(
+                              () {
+                                final index = icons.indexOf(e);
+                                return ChoiceChip(
+                                  selectedColor: Colors.grey.shade200,
+                                  backgroundColor: Colors.white,
+                                  label: e,
+                                  selected: homeCtrl.chipIindex.value == index,
+                                  onSelected: (bool selected) {
+                                    homeCtrl.chipIindex.value =
+                                        selected ? index : 0;
+                                  },
+                                );
+                              },
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: blue,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        minimumSize: const Size(150, 40)),
+                    onPressed: () {
+                      if (homeCtrl.formKey.currentState!.validate()) {
+                        int icon =
+                            icons[homeCtrl.chipIindex.value].icon!.codePoint;
+                        String color =
+                            icons[homeCtrl.chipIindex.value].color!.toHex();
+
+                        var task = Task(
+                            title: homeCtrl.editController.text,
+                            icon: icon,
+                            color: color);
+
+                        Get.back();
+                        homeCtrl.addTask(task)
+                            ? EasyLoading.showSuccess('Successfull Creation')
+                            : EasyLoading.showError('Task Already Exists');
+                      }
+                    },
+                    child: const Text('Confirm'),
                   )
                 ],
               ),
             ),
           );
+          homeCtrl.editController.clear();
+          homeCtrl.chipIindex.value = 0;
         },
         child: DottedBorder(
             color: Colors.grey.shade400,
