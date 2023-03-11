@@ -26,8 +26,11 @@ class DetailView extends GetView<DetailController> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      homeCtrl.changeTask(null);
                       Get.back();
+
+                      homeCtrl.updateTodos();
+                      homeCtrl.changeTask(null);
+                      homeCtrl.editController.clear();
                     },
                     icon: const Icon(Icons.arrow_back),
                   )
@@ -124,7 +127,7 @@ class DetailView extends GetView<DetailController> {
                       icon: const Icon(Icons.done),
                     )),
                 validator: (value) {
-                  if (value == null || value.trim().isNotEmpty) {
+                  if (value == null || value.trim().isEmpty) {
                     return 'Please, enter your todo item';
                   }
                   return null;
