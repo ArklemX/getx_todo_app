@@ -21,23 +21,49 @@ class AddCart extends StatelessWidget {
       child: InkWell(
         onTap: () async {
           await Get.defaultDialog(
-              titlePadding: EdgeInsets.symmetric(vertical: 5.0.wp),
-              radius: 5,
-              title: 'Task Type',
-              content: Form(
-                key: homeCtrl.formKey,
-                child: Column(
-                  children: [
-                    TextFormField(
+            titlePadding: EdgeInsets.symmetric(vertical: 5.0.wp),
+            radius: 5,
+            title: 'Task Type',
+            content: Form(
+              key: homeCtrl.formKey,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 3.0.wp),
+                    child: TextFormField(
                       controller: homeCtrl.editController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Title',
                       ),
-                    )
-                  ],
-                ),
-              ));
+                      validator: (value) {
+                        if (value == null || value.trim().isEmpty) {
+                          return 'Please, set a task title';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  Wrap(
+                    spacing: 2.0.wp,
+                    children: icons
+                        .map((e) => Obx(() {
+                              final index = icons.indexOf(e);
+                              return ChoiceChip(
+                                label: e,
+                                selected: homeCtrl.chipIindex.value == index,
+                                onSelected: (bool selected) {
+                                  homeCtrl.chipIindex.value =
+                                      selected ? index : 0;
+                                },
+                              );
+                            }))
+                        .toList(),
+                  )
+                ],
+              ),
+            ),
+          );
         },
         child: DottedBorder(
             color: Colors.grey.shade400,
