@@ -22,6 +22,7 @@ class HomeController extends GetxController {
 
   @override
   void onClose() {
+    editController.dispose();
     super.onClose();
   }
 

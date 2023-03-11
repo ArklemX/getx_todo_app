@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:getx_todo_app/app/core/utils/extensions.dart';
+import 'package:getx_todo_app/core/utils/extensions.dart';
 import 'package:getx_todo_app/app/modules/home/controllers/home_controller.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:getx_todo_app/app/core/utils/extensions.dart';
-import 'package:getx_todo_app/app/core/values/colors.dart';
+import 'package:getx_todo_app/core/utils/extensions.dart';
+import 'package:getx_todo_app/core/values/colors.dart';
 import 'package:getx_todo_app/app/data/models/task.dart';
 import 'package:getx_todo_app/app/widgets/add_card.dart';
 import 'package:getx_todo_app/app/widgets/task_card.dart';

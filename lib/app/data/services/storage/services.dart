@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'package:getx_todo_app/app/core/utils/keys.dart';
+import 'package:getx_todo_app/core/utils/keys.dart';
 
 class StorageService extends GetxService {
   late GetStorage _box;

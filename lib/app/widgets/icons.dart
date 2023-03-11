@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getx_todo_app/app/core/values/colors.dart';
-import 'package:getx_todo_app/app/core/values/icons.dart';
+import 'package:getx_todo_app/core/values/colors.dart';
+import 'package:getx_todo_app/core/values/icons.dart';
 
 List<Icon> getIcons() {
   return const [

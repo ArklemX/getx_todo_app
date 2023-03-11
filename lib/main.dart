@@ -15,7 +15,6 @@ Future<void> main() async {
   runApp(
     GetMaterialApp(
       title: "GetX ToDo",
-      initialBinding: HomeBinding(),
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       builder: EasyLoading.init(),
