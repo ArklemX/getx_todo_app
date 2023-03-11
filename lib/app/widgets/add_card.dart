@@ -106,15 +106,16 @@ class AddCart extends StatelessWidget {
           homeCtrl.chipIindex.value = 0;
         },
         child: DottedBorder(
-            color: Colors.grey.shade400,
-            dashPattern: const [8, 4],
-            child: Center(
-              child: Icon(
-                Icons.add,
-                size: 10.0.wp,
-                color: Colors.grey,
-              ),
-            )),
+          color: Colors.grey.shade400,
+          dashPattern: const [8, 4],
+          child: Center(
+            child: Icon(
+              Icons.add,
+              size: 10.0.wp,
+              color: Colors.grey,
+            ),
+          ),
+        ),
       ),
     );
   }

@@ -30,6 +30,11 @@ class HomeController extends GetxController {
   }
 
   bool addTask(Task task) {
-    return tasks.contains(task) ? false : true;
+    if (!tasks.contains(task)) {
+      tasks.add(task);
+      return true;
+    } else {
+      return false;
+    }
   }
 }

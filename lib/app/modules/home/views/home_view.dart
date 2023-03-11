@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:getx_todo_app/app/core/utils/extensions.dart';
+import 'package:getx_todo_app/app/core/values/colors.dart';
+import 'package:getx_todo_app/app/data/models/task.dart';
 import 'package:getx_todo_app/app/widgets/add_card.dart';
+import 'package:getx_todo_app/app/widgets/task_card.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -22,11 +25,18 @@ class HomeView extends GetView<HomeController> {
                     TextStyle(fontSize: 24.0.sp, fontWeight: FontWeight.bold),
               ),
             ),
-            GridView.count(
-              crossAxisCount: 2,
-              shrinkWrap: true,
-              physics: const ClampingScrollPhysics(),
-              children: [AddCart()],
+            Obx(
+              () => GridView.count(
+                crossAxisCount: 2,
+                shrinkWrap: true,
+                physics: const ClampingScrollPhysics(),
+                children: [
+                  ...controller.tasks
+                      .map((task) => TaskCard(task: task))
+                      .toList(),
+                  AddCart()
+                ],
+              ),
             )
           ],
         ),

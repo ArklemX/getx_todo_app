@@ -9,33 +9,33 @@ class Task extends Equatable {
     required this.title,
     required this.icon,
     required this.color,
-    this.todo,
+    this.todos,
   });
 
-  final String? title;
+  final String title;
   static const String titleKey = "title";
 
   @JsonKey(name: 'Icon')
-  final int? icon;
+  final int icon;
   static const String iconKey = "Icon";
 
-  final String? color;
+  final String color;
   static const String colorKey = "color";
 
-  final List<String>? todo;
-  static const String todoKey = "todo";
+  final List<String>? todos;
+  static const String todosKey = "todos";
 
   Task copyWith({
     String? title,
     int? icon,
     String? color,
-    List<String>? todo,
+    List<String>? todos,
   }) {
     return Task(
       title: title ?? this.title,
       icon: icon ?? this.icon,
       color: color ?? this.color,
-      todo: todo ?? this.todo,
+      todos: todos ?? this.todos,
     );
   }
 
@@ -45,10 +45,10 @@ class Task extends Equatable {
 
   @override
   String toString() {
-    return "$title, $icon, $color, $todo, ";
+    return "$title, $icon, $color, $todos, ";
   }
 
   @override
-  // TODO: implement props
+  // todos: implement props
   List<Object?> get props => [title, icon, color];
 }
