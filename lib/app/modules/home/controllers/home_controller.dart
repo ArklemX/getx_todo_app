@@ -12,6 +12,7 @@ class HomeController extends GetxController {
   final chipIindex = 0.obs;
   final tasks = <Task>[].obs;
   final deleting = false.obs;
+  final task = Rx<Task?>(null);
 
   @override
   void onInit() {
@@ -33,6 +34,10 @@ class HomeController extends GetxController {
 
   void changeDeleting(bool value) {
     deleting.value = value;
+  }
+
+  void changeTask(Task? selectedTask) {
+    task.value = selectedTask;
   }
 
   bool addTask(Task task) {
