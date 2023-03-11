@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:getx_todo_app/app/modules/home/controllers/home_controller.dart';
 import 'package:getx_todo_app/core/utils/extensions.dart';
@@ -32,7 +33,25 @@ class AddDialog extends StatelessWidget {
                           overlayColor:
                               MaterialStatePropertyAll(Colors.transparent)),
                       onPressed: () {
-                        
+                        if (homeCtrl.formKey.currentState!.validate()) {
+                          if (homeCtrl.task.value == null) {
+                            EasyLoading.showError(
+                                'Please select the task type');
+                          } else {
+                            var success = homeCtrl.updateTask(
+                                homeCtrl.task.value!,
+                                homeCtrl.editController.text);
+                            if (success) {
+                              EasyLoading.showSuccess(
+                                  'Todo item add successfully');
+                              Get.back();
+                              homeCtrl.changeTask(null);
+                            } else {
+                              EasyLoading.showError('Todo Item already exists');
+                            }
+                            homeCtrl.editController.clear();
+                          }
+                        }
                       },
                       child: Text(
                         'Done',

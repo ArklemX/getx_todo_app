@@ -22,14 +22,14 @@ class Task extends Equatable {
   final String color;
   static const String colorKey = "color";
 
-  final List<String>? todos;
+  final List? todos;
   static const String todosKey = "todos";
 
   Task copyWith({
     String? title,
     int? icon,
     String? color,
-    List<String>? todos,
+    List? todos,
   }) {
     return Task(
       title: title ?? this.title,
