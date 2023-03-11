@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:getx_todo_app/app/data/models/task.dart';
@@ -13,6 +14,8 @@ class HomeController extends GetxController {
   final tasks = <Task>[].obs;
   final deleting = false.obs;
   final task = Rx<Task?>(null);
+  final doingTodos = <dynamic>[].obs;
+  final doneTodos = <dynamic>[].obs;
 
   @override
   void onInit() {
@@ -40,6 +43,21 @@ class HomeController extends GetxController {
     task.value = selectedTask;
   }
 
+  void changeTodos(List<dynamic> selected) {
+    doingTodos.clear();
+    doneTodos.clear();
+    for (var i = 0; i < selected.length; i++) {
+      var todo = selected[i];
+      var status = todo['done'];
+
+      if (status == true) {
+        doneTodos.add(todo);
+      } else {
+        doingTodos.add(todo);
+      }
+    }
+  }
+
   bool addTask(Task task) {
     if (!tasks.contains(task)) {
       tasks.add(task);
@@ -64,7 +82,7 @@ class HomeController extends GetxController {
       var newTask = task.copyWith(todos: todos);
       int oldIdx = tasks.indexOf(task);
       tasks[oldIdx] = newTask;
-      tasks.refresh(); 
+      tasks.refresh();
 
       return true;
     }
@@ -72,5 +90,23 @@ class HomeController extends GetxController {
 
   bool containTodo(List todos, String title) {
     return todos.any((element) => element['title'] == title);
+  }
+
+  bool addTodo(String title) {
+    var todo = {'title': title, 'done': false};
+
+    if (doingTodos
+        .any((element) => mapEquals<String, dynamic>(todo, element))) {
+      return false;
+    }
+
+    var doneTodo = {'title': title, 'done': true};
+    if (doneTodos
+        .any((element) => mapEquals<String, dynamic>(doneTodo, element))) {
+      return false;
+    }
+
+    doingTodos.add(todo);
+    return true;
   }
 }
