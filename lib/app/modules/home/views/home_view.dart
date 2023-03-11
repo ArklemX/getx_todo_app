@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'package:get/get.dart';
+import 'package:getx_todo_app/app/widgets/add_dialog.dart';
 import 'package:getx_todo_app/core/utils/extensions.dart';
 import 'package:getx_todo_app/core/values/colors.dart';
 import 'package:getx_todo_app/app/data/models/task.dart';
@@ -32,7 +34,21 @@ class HomeView extends GetView<HomeController> {
                 physics: const ClampingScrollPhysics(),
                 children: [
                   ...controller.tasks
-                      .map((task) => TaskCard(task: task))
+                      .map(
+                        (task) => LongPressDraggable(
+                          data: task,
+                          onDragStarted: () => controller.changeDeleting(true),
+                          onDraggableCanceled: (velocity, offset) =>
+                              controller.changeDeleting(false),
+                          onDragEnd: (details) =>
+                              controller.changeDeleting(false),
+                          feedback: Opacity(
+                            opacity: 0.8,
+                            child: TaskCard(task: task),
+                          ),
+                          child: TaskCard(task: task),
+                        ),
+                      )
                       .toList(),
                   AddCart()
                 ],
@@ -40,6 +56,25 @@ class HomeView extends GetView<HomeController> {
             )
           ],
         ),
+      ),
+      floatingActionButton: DragTarget(
+        builder: (context, candidateData, rejectedData) {
+          return Obx(
+            () => FloatingActionButton(
+              backgroundColor: controller.deleting.isTrue ? Colors.red : blue,
+              onPressed: controller.deleting.isTrue
+                  ? null
+                  : () => Get.to(() => AddDialog(),
+                      transition: Transition.downToUp),
+              child:
+                  Icon(controller.deleting.isTrue ? Icons.delete : Icons.add),
+            ),
+          );
+        },
+        onAccept: (Task task) {
+          controller.deleteTask(task);
+          EasyLoading.showSuccess('Deleted Successfully');
+        },
       ),
     );
   }
