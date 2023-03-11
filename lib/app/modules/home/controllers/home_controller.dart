@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:getx_todo_app/app/data/models/task.dart';
 import 'package:getx_todo_app/app/data/services/storage/repository.dart';
@@ -6,6 +7,8 @@ class HomeController extends GetxController {
   TaskRepository taskRepository;
   HomeController({required this.taskRepository});
 
+  final formKey = GlobalKey<FormState>();
+  final editController = TextEditingController();
   final tasks = <Task>[].obs;
 
   @override
