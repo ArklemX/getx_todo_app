@@ -8,6 +8,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import '../controllers/detail_controller.dart';
 import '../widgets/doing_list.dart';
+import '../widgets/done_list.dart';
 
 class DetailView extends GetView<DetailController> {
   final homeCtrl = Get.find<HomeController>();
@@ -135,7 +136,8 @@ class DetailView extends GetView<DetailController> {
                 },
               ),
             ),
-            DoingList()
+            DoingList(),
+            DoneList()
           ],
         ),
       ),
