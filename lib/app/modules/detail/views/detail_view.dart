@@ -7,6 +7,7 @@ import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import '../controllers/detail_controller.dart';
+import '../widgets/doing_list.dart';
 
 class DetailView extends GetView<DetailController> {
   final homeCtrl = Get.find<HomeController>();
@@ -28,9 +29,9 @@ class DetailView extends GetView<DetailController> {
                     onPressed: () {
                       Get.back();
 
-                      homeCtrl.updateTodos();
-                      homeCtrl.changeTask(null);
-                      homeCtrl.editController.clear();
+                      homeCtrl.updateTodos(); // Update the todo list
+                      homeCtrl.changeTask(null); // Discard task in memory
+                      homeCtrl.editController.clear(); // clear my textformfield
                     },
                     icon: const Icon(Icons.arrow_back),
                   )
@@ -133,7 +134,8 @@ class DetailView extends GetView<DetailController> {
                   return null;
                 },
               ),
-            )
+            ),
+            DoingList()
           ],
         ),
       ),
