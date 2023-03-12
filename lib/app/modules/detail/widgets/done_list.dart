@@ -23,29 +23,43 @@ class DoneList extends StatelessWidget {
                   style: TextStyle(fontSize: 12.0.sp, color: Colors.grey),
                 ),
               ),
-              ...homeCtrl.doneTodos.map((element) => Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: 3.0.wp, horizontal: 9.0.wp),
-                    child: Row(
-                      children: [
-                        const SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: Icon(
-                            Icons.check,
-                            color: blue,
+              ...homeCtrl.doneTodos.map((element) => Dismissible(
+                    key: ObjectKey(element),
+                    direction: DismissDirection.endToStart,
+                    onDismissed: (direction) =>
+                        homeCtrl.deleteDoneTodo(element),
+                    background: Container(
+                      color: Colors.red.withOpacity(0.8),
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 5.0.wp),
+                        child: const Icon(Icons.delete, color: Colors.white),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 3.0.wp, horizontal: 9.0.wp),
+                      child: Row(
+                        children: [
+                          const SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: Icon(
+                              Icons.check,
+                              color: blue,
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 4.0.wp),
-                          child: Text(
-                            element['title'],
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                                decoration: TextDecoration.lineThrough),
-                          ),
-                        )
-                      ],
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 4.0.wp),
+                            child: Text(
+                              element['title'],
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                  decoration: TextDecoration.lineThrough),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ))
             ],

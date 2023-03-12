@@ -9,10 +9,6 @@ class ReportView extends GetView<ReportController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ReportView'),
-        centerTitle: true,
-      ),
       body: Center(
         child: Text(
           'ReportView is working',

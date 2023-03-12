@@ -17,6 +17,8 @@ class HomeController extends GetxController {
   final doingTodos = <dynamic>[].obs;
   final doneTodos = <dynamic>[].obs;
 
+  final tabIndex = 0.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -41,6 +43,10 @@ class HomeController extends GetxController {
 
   void changeTask(Task? selectedTask) {
     task.value = selectedTask;
+  }
+
+  void changeTabIndex(int index) {
+    tabIndex.value = index;
   }
 
   void changeTodos(List<dynamic> selected) {
@@ -131,5 +137,25 @@ class HomeController extends GetxController {
     doneTodos.add(doneTodo);
     doingTodos.refresh();
     doneTodos.refresh();
+  }
+
+  void deleteDoneTodo(dynamic doneTodo) {
+    int index = doneTodos
+        .indexWhere((element) => mapEquals<String, dynamic>(doneTodo, element));
+
+    doneTodos.removeAt(index);
+    doneTodos.refresh();
+  }
+
+  bool isTodosEmpty(Task task) {
+    return task.todos == null || task.todos!.isEmpty;
+  }
+
+  int getDoneTodo(Task task) {
+    var result = 0;
+    for (var i = 0; i < task.todos!.length; i++) {
+      if (task.todos![i]['done'] == true) result++;
+    }
+    return result;
   }
 }

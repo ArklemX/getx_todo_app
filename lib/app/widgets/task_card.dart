@@ -40,13 +40,14 @@ class TaskCard extends StatelessWidget {
             //TODO : Change after finish todo CRUD
             //TODO : Add Tween Animation on the progress bar
             StepProgressIndicator(
-              totalSteps: 100,
-              currentStep: 53,
+              totalSteps: homeCtrl.isTodosEmpty(task) ? 1 : task.todos!.length,
+              currentStep:
+                  homeCtrl.isTodosEmpty(task) ? 0 : homeCtrl.getDoneTodo(task),
               size: 5,
               padding: 0,
               selectedGradientColor: LinearGradient(
                   begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                  end: Alignment.bottomRight, 
                   colors: [color.withOpacity(0.5), color]),
               unselectedGradientColor: const LinearGradient(
                   begin: Alignment.topLeft,
