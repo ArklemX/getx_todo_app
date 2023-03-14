@@ -12,7 +12,7 @@ Dans ce projet, nous avons utilisé le pattern GetX pour la structure de code. L
 
 Dans ce pattern, chaque page (View) de l'application a un contrôleur (Controller) qui gère l'état de la page. Le contrôleur est responsable de la logique métier, de la récupération des données et de la mise à jour de l'état de la page. Les pages sont donc passives et ne contiennent pas de logique métier.
 
-Le pattern GetX est facile à utiliser, car il ne nécessite pas beaucoup de code boilerplate, et il est également très performant, car il utilise des observables pour la mise à jour de l'interface utilisateur.
+Le pattern GetX est facile à utiliser, car il ne nécessite pas beaucoup de code boilerplate( ***des sections de code qui sont répétées à plusieurs endroits avec peu ou pas de variation.*** ),  et il est également très performant, car il utilise des observables pour la mise à jour de l'interface utilisateur, et une bonne gestion des états de l'application.
 
 > De manniere globale , la strucutre est la suivante :
 
@@ -31,9 +31,10 @@ En l'occurence, il s'agit des **modèles** (Le modèle de nos tâches) , des **p
 #### modules
 Chaque module se compose d'une page, de son GetXController respectif et de ses dépendances ou liaisons(Bindings).
 ***Le dossier Binding contient ici les classes pour l'injection de dépendances***
-##### home
-##### detail
-##### report
+##### Exemple : Le module home
+
+
+
 #### routes
 #### widgets
 

@@ -6,7 +6,7 @@ import 'package:getx_todo_app/core/utils/extensions.dart';
 import 'package:getx_todo_app/core/values/colors.dart';
 import 'package:getx_todo_app/app/data/models/task.dart';
 import 'package:getx_todo_app/app/modules/home/controllers/home_controller.dart';
-import 'package:getx_todo_app/app/widgets/icons.dart';
+import 'package:getx_todo_app/app/global_widgets/icons.dart';
 
 class AddCart extends StatelessWidget {
   final homeCtrl = Get.find<HomeController>();

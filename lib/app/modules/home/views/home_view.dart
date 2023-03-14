@@ -3,12 +3,12 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'package:get/get.dart';
 import 'package:getx_todo_app/app/modules/report/views/report_view.dart';
-import 'package:getx_todo_app/app/widgets/add_dialog.dart';
+import 'package:getx_todo_app/app/global_widgets/add_dialog.dart';
 import 'package:getx_todo_app/core/utils/extensions.dart';
 import 'package:getx_todo_app/core/values/colors.dart';
 import 'package:getx_todo_app/app/data/models/task.dart';
-import 'package:getx_todo_app/app/widgets/add_card.dart';
-import 'package:getx_todo_app/app/widgets/task_card.dart';
+import 'package:getx_todo_app/app/global_widgets/add_card.dart';
+import 'package:getx_todo_app/app/global_widgets/task_card.dart';
 
 import '../controllers/home_controller.dart';
 
