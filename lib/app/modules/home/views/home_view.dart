@@ -98,27 +98,29 @@ class HomeView extends GetView<HomeController> {
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
         ),
-        child: BottomNavigationBar(
-          onTap: (index) => controller.changeTabIndex(index),
-          currentIndex: controller.tabIndex.value,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          items: [
-            BottomNavigationBarItem(
-              label: 'Home',
-              icon: Padding(
-                padding: EdgeInsets.only(right: 15.0.wp),
-                child: const Icon(Icons.apps),
+        child: Obx(
+          () => BottomNavigationBar(
+            onTap: (index) => controller.changeTabIndex(index),
+            currentIndex: controller.tabIndex.value,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            items: [
+              BottomNavigationBarItem(
+                label: 'Home',
+                icon: Padding(
+                  padding: EdgeInsets.only(right: 15.0.wp),
+                  child: const Icon(Icons.apps),
+                ),
               ),
-            ),
-            BottomNavigationBarItem(
-              label: 'Report',
-              icon: Padding(
-                padding: EdgeInsets.only(left: 15.0.wp),
-                child: const Icon(Icons.data_usage),
+              BottomNavigationBarItem(
+                label: 'Report',
+                icon: Padding(
+                  padding: EdgeInsets.only(left: 15.0.wp),
+                  child: const Icon(Icons.data_usage),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
