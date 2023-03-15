@@ -11,12 +11,6 @@ Le but de ce projet est de démontrer l'utilisation du pattern GetX pour la stru
 
 <br>
 
-<h2>💻 Installation du dépôt</h2>
-<li>Clonez le projet depuis GitHub: <code>git clone https://github.com/ArklemX/getx-todo-app.git</code></li><li>Installez les dépendances: <code>flutter pub get</code></li><li>Exécutez l'application: <code>flutter run</code></li>
-📲 Installation de l'application
-Vous pouvez télécharger l'application pour les appareils Android <a href = './build/app/outputs/flutter-apk/getx-todo-app.apk'>ICI</a> 
-<br><br>
-
 <h2>🎨 Organisation du code</h2>
 Dans ce projet, nous avons utilisé le pattern GetX pour la structure de code. Le pattern GetX est une alternative au pattern MVC (Model-View-Controller) pour la gestion d'états dans les applications Flutter. <br> Il est basé sur le modèle MVVM (Model-View-ViewModel) mais utilise des contrôleurs (Controllers) pour gérer l'état de l'application.
 Dans ce pattern, chaque page (View) de l'application a un contrôleur (Controller) qui gère l'état de la page. Le contrôleur est responsable de la logique métier, de la récupération des données et de la mise à jour de l'état de la page. Les pages sont donc passives et ne contiennent pas de logique métier.
@@ -105,6 +99,6 @@ Les contributions sont les bienvenues! Si vous souhaitez contribuer à ce projet
 <li>Fork du projet</li><li>Créez une branche pour votre fonctionnalité: <code>git checkout -b feature/nouvelle-fonctionnalité</code></li><li>Effectuez vos modifications et effectuez un commit: <code>git commit -am "Ajout de la nouvelle fonctionnalité"</code></li><li>Poussez les modifications vers votre branche: <code>git push origin feature/nouvelle-fonctionnalité</code></li><li>Créez une demande de tirage (pull request)</li> <br>
 <h2>🙏 Crédits</h2>
 Ce projet a été développé par Marcel pour démontrer l'utilisation du pattern GetX dans le développement d'applications mobiles avec Flutter.
-<li>Fullstack School : Dont j'ai suivi le tuto youtube afin de développer cette application.</li><li>kauemurakami : Qui propose le pattern GetX. Plus de détails sur ce pattern à l'adresse : [GetX_Pattern](https://github.com/kauemurakami/getx_pattern) </li><br>
+<li>Fullstack School : Dont j'ai suivi le tuto youtube afin de développer cette application.</li><li>kauemurakami : Qui propose le pattern GetX. Plus de détails sur ce pattern à l'adresse : <a href= 'https://github.com/kauemurakami/getx_pattern'>GetX Pattern</a> </li><br>
 <h2>🔖 Licence</h2>
 Ce projet est sous licence MIT. Veuillez consulter le fichier <code>LICENSE</code> pour plus d'informations.
