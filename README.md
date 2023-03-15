@@ -100,5 +100,3 @@ Les contributions sont les bienvenues! Si vous souhaitez contribuer à ce projet
 <h2>🙏 Crédits</h2>
 Ce projet a été développé par Marcel pour démontrer l'utilisation du pattern GetX dans le développement d'applications mobiles avec Flutter.
 <li>Fullstack School : Dont j'ai suivi le tuto youtube afin de développer cette application.</li><li>kauemurakami : Qui propose le pattern GetX. Plus de détails sur ce pattern à l'adresse : <a href= 'https://github.com/kauemurakami/getx_pattern'>GetX Pattern</a> </li><br>
-<h2>🔖 Licence</h2>
-Ce projet est sous licence MIT. Veuillez consulter le fichier <code>LICENSE</code> pour plus d'informations.
