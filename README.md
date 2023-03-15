@@ -20,12 +20,12 @@ Le pattern GetX est facile à utiliser, car il ne nécessite pas beaucoup de cod
 <img src="./assets/readme/GetX_Structure.jpg" alt="Structure de base Getx Pattern">
 <p>Appliquée à ce projet, nous obtenons ce qui suit :</p>
 <h3>📁 app</h3>
-Le répertoire qui contenir tous les dossiers de notre application.<br><br>
-<h3>📁 data</h3><br>
+Le répertoire qui contenir tous les dossiers de notre application.<br>
+<h3>📁 data</h3>
 Dossier responsable de contenir tout ce qui est relatif aux données.
 <img src="./assets/readme/dossier_data.png" alt="Dossier app/data">
-En l'occurrence, il s'agit des <strong>modèles</strong> :pencil2: (Le modèle de nos tâches) , des <strong>providers</strong> :card_file_box: ( qui se charge de fournir le service de stockage. Il peut aussi s'agir d'une API ) des <strong>services</strong> :hammer: (Le service de stockage de nos tâches en mémoire).<br><br>
-<h3>📁 modules</h3><br>
+En l'occurrence, il s'agit des <strong>modèles</strong> :pencil2: (Le modèle de nos tâches) , des <strong>providers</strong> :card_file_box: ( qui se charge de fournir le service de stockage. Il peut aussi s'agir d'une API ) des <strong>services</strong> :hammer: (Le service de stockage de nos tâches en mémoire).<br>
+<h3>📁 modules</h3>
 Chaque module se compose d'une page, de son GetXController respectif et de ses dépendances ou liaisons(Bindings).
 <em><strong>Le dossier Binding contient ici les classes pour l'injection de dépendances</strong></em>
 <p>Exemple : Le module home</p>
