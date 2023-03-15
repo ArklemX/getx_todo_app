@@ -98,5 +98,5 @@ Le dossier <strong>values</strong> contient des valeurs constantes réutilisable
 Les contributions sont les bienvenues! Si vous souhaitez contribuer à ce projet, veuillez suivre les étapes suivantes:
 <li>Fork du projet</li><li>Créez une branche pour votre fonctionnalité: <code>git checkout -b feature/nouvelle-fonctionnalité</code></li><li>Effectuez vos modifications et effectuez un commit: <code>git commit -am "Ajout de la nouvelle fonctionnalité"</code></li><li>Poussez les modifications vers votre branche: <code>git push origin feature/nouvelle-fonctionnalité</code></li><li>Créez une demande de tirage (pull request)</li> <br>
 <h2>🙏 Crédits</h2>
-Ce projet a été développé par Marcel pour démontrer l'utilisation du pattern GetX dans le développement d'applications mobiles avec Flutter.
+Ce projet a été développé par Marcel pour démontrer l'utilisation du pattern GetX dans le développement d'applications mobiles avec Flutter, avec les sources suivantes :
 <li>Fullstack School : Dont j'ai suivi le tuto youtube afin de développer cette application.</li><li>kauemurakami : Qui propose le pattern GetX. Plus de détails sur ce pattern à l'adresse : <a href= 'https://github.com/kauemurakami/getx_pattern'>GetX Pattern</a> </li><br>
