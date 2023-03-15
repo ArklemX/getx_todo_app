@@ -14,7 +14,7 @@ Le but de ce projet est de démontrer l'utilisation du pattern GetX pour la stru
 <h2>💻 Installation du dépôt</h2>
 <li>Clonez le projet depuis GitHub: <code>git clone https://github.com/ArklemX/getx-todo-app.git</code></li><li>Installez les dépendances: <code>flutter pub get</code></li><li>Exécutez l'application: <code>flutter run</code></li>
 📲 Installation de l'application
-Vous pouvez télécharger l'application pour les appareils Android <a href="https://googleplay.com/getx-todo-app" target="_new">ICI</a>.
+Vous pouvez télécharger l'application pour les appareils Android [ICI](./build/app/outputs/flutter-apk/getx-todo-app.apk).
 <br><br>
 
 <h2>🎨 Organisation du code</h2>
@@ -40,9 +40,8 @@ Chaque module se compose d'une page, de son GetXController respectif et de ses d
 Dans ce dossier nous déposons nos routes vers nos différentes pages.
 <img src="./assets/readme/dossier_route.png" alt="Dossier app/data">
 <p>Dans le fichier app_routes.dart, nous définissons des constantes pour les routes</p>
-```java
-java
-Copy code
+
+```
 part of 'app_pages.dart';
 // DO NOT EDIT. This is code generated via package:get_cli/get_cli.dart
 
@@ -61,9 +60,8 @@ abstract class _Paths {
 }
 ```
 <p>Tandis que dans le fichier app_pages.dart, nous définissons les routes vers les pages/vues</p>
-```php
-php
-Copy code
+
+```
 part 'app_routes.dart';
 
 class AppPages {
@@ -85,27 +83,28 @@ class AppPages {
 <h3>🧩 global_widgets</h3><br>
 Ce dossier contient des widgets qui peuvent être réutilisés dans de multiples <em><strong>modules</strong></em>
 📁 <img src="./assets/readme/dossier_widgets.png" alt="Dossier app/data">
+<br><br>
 <h3>💻 core</h3><br>
 Ce dossier contient basiquement le cœur de l'application. C'est l'endroit où l'on définira les méthodes globalement utiles au projet, les thèmes, les classes d'Exception pour gérer les erreurs...
 En l'occurrence :
 🛠️ utils
 Le dossier <strong>utils</strong> contient les extensions utiles dans tout le projet et les clés permettant de stocker nos tâches en mémoire locale.
 <p>Extrait du fichier <code>extensions.dart</code> : Cette extension s'applique sur tous les <code>double</code> et permet de créer des dimensions responsives.</p>
-```csharp
-csharp
-Copy code
+
+```
 extension PercentSized on double {
   double get hp => (Get.height * (this / 100));
   double get wp => (Get.width * (this / 100));
 }
 ```
-<h3>🔢 values</h3>
+<br>
+<h3>🔢 values</h3><br>
 Le dossier <strong>values</strong> contient des valeurs constantes réutilisables dans toute l'application.<br>
 <h2>🤝 Contribution</h2>
 Les contributions sont les bienvenues! Si vous souhaitez contribuer à ce projet, veuillez suivre les étapes suivantes:
 <li>Fork du projet</li><li>Créez une branche pour votre fonctionnalité: <code>git checkout -b feature/nouvelle-fonctionnalité</code></li><li>Effectuez vos modifications et effectuez un commit: <code>git commit -am "Ajout de la nouvelle fonctionnalité"</code></li><li>Poussez les modifications vers votre branche: <code>git push origin feature/nouvelle-fonctionnalité</code></li><li>Créez une demande de tirage (pull request)</li> <br>
 <h2>🙏 Crédits</h2>
 Ce projet a été développé par Marcel pour démontrer l'utilisation du pattern GetX dans le développement d'applications mobiles avec Flutter.
-<li>Fullstack School : Dont j'ai suivi le tuto youtube afin de développer cette application.</li><li>kauemurakami : Qui propose le pattern GetX. Plus de détails sur ce pattern à l'adresse : [!GetX_Pattern] (<a href="https://github.com/kauemurakami/getx_pattern" target="_new">https://github.com/kauemurakami/getx_pattern</a>)</li><br>
+<li>Fullstack School : Dont j'ai suivi le tuto youtube afin de développer cette application.</li><li>kauemurakami : Qui propose le pattern GetX. Plus de détails sur ce pattern à l'adresse : [GetX_Pattern](https://github.com/kauemurakami/getx_pattern) </li><br>
 <h2>🔖 Licence</h2>
 Ce projet est sous licence MIT. Veuillez consulter le fichier <code>LICENSE</code> pour plus d'informations.
