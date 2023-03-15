@@ -14,7 +14,7 @@ Le but de ce projet est de démontrer l'utilisation du pattern GetX pour la stru
 <h2>💻 Installation du dépôt</h2>
 <li>Clonez le projet depuis GitHub: <code>git clone https://github.com/ArklemX/getx-todo-app.git</code></li><li>Installez les dépendances: <code>flutter pub get</code></li><li>Exécutez l'application: <code>flutter run</code></li>
 📲 Installation de l'application
-Vous pouvez télécharger l'application pour les appareils Android [ICI](./build/app/outputs/flutter-apk/getx-todo-app.apk).
+Vous pouvez télécharger l'application pour les appareils Android <a href = './build/app/outputs/flutter-apk/getx-todo-app.apk'>ICI</a> 
 <br><br>
 
 <h2>🎨 Organisation du code</h2>
@@ -25,9 +25,9 @@ Le pattern GetX est facile à utiliser, car il ne nécessite pas beaucoup de cod
 <p>De manière globale , la structure est la suivante :</p>
 <img src="./assets/readme/GetX_Structure.jpg" alt="Structure de base Getx Pattern">
 <p>Appliquée à ce projet, nous obtenons ce qui suit :</p>
-<h3>📁 app</h3><br>
+<h3>📁 app</h3>
 Le répertoire qui contenir tous les dossiers de notre application.<br><br>
-<h3>📁 data</h3>
+<h3>📁 data</h3><br>
 Dossier responsable de contenir tout ce qui est relatif aux données.
 <img src="./assets/readme/dossier_data.png" alt="Dossier app/data">
 En l'occurrence, il s'agit des <strong>modèles</strong> :pencil2: (Le modèle de nos tâches) , des <strong>providers</strong> :card_file_box: ( qui se charge de fournir le service de stockage. Il peut aussi s'agir d'une API ) des <strong>services</strong> :hammer: (Le service de stockage de nos tâches en mémoire).<br><br>
@@ -36,8 +36,8 @@ Chaque module se compose d'une page, de son GetXController respectif et de ses d
 <em><strong>Le dossier Binding contient ici les classes pour l'injection de dépendances</strong></em>
 <p>Exemple : Le module home</p>
 <img src="./assets/readme/module_home.png" alt="Dossier app/data"><br>
-<h3>📁 routes</h3><br>
-Dans ce dossier nous déposons nos routes vers nos différentes pages.
+<h3>📁 routes</h3>
+Dans ce dossier nous déposons nos routes vers nos différentes pages.<br>
 <img src="./assets/readme/dossier_route.png" alt="Dossier app/data">
 <p>Dans le fichier app_routes.dart, nous définissons des constantes pour les routes</p>
 
@@ -80,11 +80,11 @@ class AppPages {
       page: () => DetailView(),
       binding:
 ```
-<h3>🧩 global_widgets</h3><br>
-Ce dossier contient des widgets qui peuvent être réutilisés dans de multiples <em><strong>modules</strong></em>
+<h3>🧩 global_widgets</h3>
+Ce dossier contient des widgets qui peuvent être réutilisés dans de multiples <em><strong>modules</strong></em><br>
 📁 <img src="./assets/readme/dossier_widgets.png" alt="Dossier app/data">
-<br><br>
-<h3>💻 core</h3><br>
+<br>
+<h3>💻 core</h3>
 Ce dossier contient basiquement le cœur de l'application. C'est l'endroit où l'on définira les méthodes globalement utiles au projet, les thèmes, les classes d'Exception pour gérer les erreurs...
 En l'occurrence :
 🛠️ utils
@@ -98,7 +98,7 @@ extension PercentSized on double {
 }
 ```
 <br>
-<h3>🔢 values</h3><br>
+<h3>🔢 values</h3>
 Le dossier <strong>values</strong> contient des valeurs constantes réutilisables dans toute l'application.<br>
 <h2>🤝 Contribution</h2>
 Les contributions sont les bienvenues! Si vous souhaitez contribuer à ce projet, veuillez suivre les étapes suivantes:
