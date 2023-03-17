@@ -7,7 +7,7 @@ Le but de ce projet est de démontrer l'utilisation du pattern GetX pour la stru
 <br>
 <h2>🚀 Fonctionnalités de l'application</h2>
 
-<li>Ajout et modification de tâches 📝</li><li>Marquer les choses à faire comme terminées ✅</li><li>Supprimer les choses à faire en faisant un slide vers la gauche 🗑️</li><li>Ajouter et supprimer des types de tâches 📌</li><li>Affichage de la liste des tâches 📋</li><li>Affichage de la liste d'un rapport sur les tâches 📊</li>
+<li>Ajout de tâches 📝</li><li>Marquer les choses à faire comme terminées ✅</li><li>Supprimer les choses à faire en faisant un slide vers la gauche 🗑️</li><li>Ajouter et supprimer des types de tâches 📌</li><li>Affichage de la liste des tâches 📋</li><li>Affichage d'un rapport sur les tâches 📊</li>
 
 <br>
 
