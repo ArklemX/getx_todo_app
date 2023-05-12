@@ -27,3 +27,13 @@ extension HexColor on Color {
       '${green.toRadixString(16).padLeft(2, '0')}'
       '${blue.toRadixString(16).padLeft(2, '0')}';
 }
+
+
+extension SizedBoxExtention on num {
+  SizedBox get height => SizedBox(
+        height: toDouble(),
+      );
+  SizedBox get width => SizedBox(
+        width: toDouble(),
+      );
+}
